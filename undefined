@@ -1,0 +1,16 @@
+```scala
+class MyClass(val x: Int) {
+  def this() = this(0) 
+}
+
+val myInstance = new MyClass()
+println(myInstance.x) // prints 0
+
+val anotherInstance = new MyClass(5)
+println(anotherInstance.x) // prints 5
+
+// Explanation:
+// The auxiliary constructor `this()` is used to define a default value for the `x` parameter, making it optional when creating instances of `MyClass`. 
+// When you write `new MyClass()`, it calls the auxiliary constructor, which then calls the main constructor with `x` set to 0.  When `new MyClass(5)` is used, the primary constructor is called directly with `x` set to 5.
+// This is not a bug, but rather a standard way to construct objects with optional parameters in Scala. 
+```
